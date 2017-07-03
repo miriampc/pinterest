@@ -1,0 +1,36 @@
+{
+  "name": "pinterest",
+  "version": "1.0.0",
+  "description": "Replica de pinterest",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js && gulp serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miriampc/pinterest.git"
+  },
+  "keywords": [
+    "gulp",
+    "sass",
+    "JavaScript",
+    "npm"
+  ],
+  "author": "@naomi - @ariana - @miriampc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miriampc/pinterest/issues"
+  },
+  "homepage": "https://github.com/miriampc/pinterest#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0"
+  }
+}
