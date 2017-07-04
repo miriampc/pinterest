@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
-const browserify = ('gulp-browserify');
+const browserify = require('gulp-browserify');
 const browserSync = require('browser-sync').create();
 const rename = require('gulp-rename');
 
@@ -14,7 +14,7 @@ const paths = {
     html:"**/*.html",
     sass:"scss/**/*.scss",
     mainSass:"scss/main.scss",
-    mainJS:"js/app.js"
+    mainJS:"js/index.js"
 };
 
 const sources = {
