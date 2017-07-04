@@ -27,10 +27,14 @@
     "express": "^4.15.3"
   },
   "devDependencies": {
+    "6to5ify": "^4.1.1",
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
+    "gulp-6to5": "^3.0.0",
     "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
   }
 }
