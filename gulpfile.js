@@ -14,7 +14,8 @@ const paths = {
     html:"**/*.html",
     sass:"scss/**/*.scss",
     mainSass:"scss/main.scss",
-    mainJS:"js/index.js"
+    mainJS:"js/index.js",
+    boardJSC:"js/**/*.js"
 };
 
 const sources = {
@@ -23,7 +24,8 @@ const sources = {
     sass: paths.assets + paths.sass,
     js:config.source + paths.js,
     rootSass: config.source + paths.assets + paths.mainSass,
-    rootJS:config.source + paths.assets + paths.mainJS
+    rootJS:config.source + paths.assets + paths.mainJS,
+    rootJSC:config.source + paths.assets + paths.boardJSC
 };
 
 gulp.task('html', () => {
@@ -31,7 +33,8 @@ gulp.task('html', () => {
 
 });
 gulp.task('sass', () => {
-    gulp.src(sources.rootSass).pipe(sass({
+    gulp.src(sources.rootSass)
+    .pipe(sass({
         outputStyle:"compressed"
     }).on("error",sass.logError)).pipe(gulp.dest(config.dist+paths.assets+"css"));
 });
@@ -43,12 +46,23 @@ gulp.task('js', () => {
         .pipe(gulp.dest(config.dist + paths.assets +"js"));
 });
 
+gulp.task('components', () => {
+    gulp.src(sources.rootJSC)
+        .pipe(browserify())
+        .pipe(rename("board.js"))
+        .pipe(gulp.dest(config.dist + paths.assets +'js/components'));
+});
+
 gulp.task('sass-watch',["sass"], (done) => {
     browserSync.reload();
     done();
 });
 
 gulp.task('js-watch',["js"], (done) => {
+    browserSync.reload();
+    done();
+});
+gulp.task('components-watch',["components"], (done) => {
     browserSync.reload();
     done();
 });
@@ -64,4 +78,5 @@ gulp.task("serve", () => {
    gulp.watch(sources.html,["html-watch"]);
    gulp.watch(sources.sass,["sass-watch"]);
    gulp.watch(sources.js,["js-watch"]);
+   gulp.watch(sources.js,["components-watch"]);
 });
