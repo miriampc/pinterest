@@ -1,9 +1,12 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const browserify = ('gulp-browserify');
 const browserSync = require('browser-sync').create();
+const rename = require('gulp-rename');
+
 const config = {
     source:'./src/',
-    dist:'./public'
+    dist:'./public/'
 };
 
 const paths = {
@@ -23,42 +26,42 @@ const sources = {
     rootJS:config.source + paths.assets + paths.mainJS
 };
 
-gulp.task('html', _=>{
+gulp.task('html', () => {
     gulp.src(sources.html).pipe(gulp.dest(config.dist));
 
 });
-gulp.task('sass',_=>{
+gulp.task('sass', () => {
     gulp.src(sources.rootSass).pipe(sass({
         outputStyle:"compressed"
     }).on("error",sass.logError)).pipe(gulp.dest(config.dist+paths.assets+"css"));
 });
 
-gulp.task('js',_=>{
+gulp.task('js', () => {
     gulp.src(sources.rootJS)
         .pipe(browserify())
         .pipe(rename("bundle.js"))
         .pipe(gulp.dest(config.dist + paths.assets +"js"));
 });
 
-gulp.task('sass-watch',["sass"],(done)=>{
+gulp.task('sass-watch',["sass"], (done) => {
     browserSync.reload();
     done();
 });
 
-gulp.task('js-watch',["js"],(done)=>{
+gulp.task('js-watch',["js"], (done) => {
     browserSync.reload();
     done();
 });
 
-gulp.task('html-watch',["html"],(done)=>{
+gulp.task('html-watch',["html"], (done) => {
     browserSync.reload();
     done();
 });
-gulp.task("serve",_=>{
+gulp.task("serve", () => {
    browserSync.init({
-       server:{baseDir:config.build}
+       server:{baseDir:config.dist}
    });
    gulp.watch(sources.html,["html-watch"]);
-    gulp.watch(sources.sass,["sass-watch"]);
-    gulp.watch(sources.js,["js-watch"]);
+   gulp.watch(sources.sass,["sass-watch"]);
+   gulp.watch(sources.js,["js-watch"]);
 });
