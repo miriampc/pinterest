@@ -1,9 +1,9 @@
-// console.log("hola");
+ // console.log("hola");
 'use strict';
 const Header = (update) => {
-  // const container = $('<div></div>');
   // nav principal
   const nav = $('<nav class="fixed-nav col-xs-12 col-lg-12"></nav>');
+  const container = $('<div id="container"></div>')
   const divBrand = $('<div class="navbar-brand col-xs-2 col-md-1 col-lg-1 flex"></div>');
   const brand = $('<a href="index.html"><img class="brand" alt="Logo Pinterest" src="assets/images/pinterest-logo.png"></a>');
 
@@ -26,11 +26,11 @@ const Header = (update) => {
 
   const divText = $('<div class="show col-lg-7 col-xs-8"><span>Web UI</span></div>')
 
-  // $('').append(container);
   $('.components').append(nav);
-  nav.append(divBrand);
-  nav.append(divSearch);
-  nav.append(divBtn);
+  nav.append(container);
+  container.append(divBrand);
+  container.append(divSearch);
+  container.append(divBtn);
   nav.append(sectionBoard);
 
   divBrand.append(brand);
