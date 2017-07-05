@@ -14,19 +14,17 @@ img{
   width: 40px;
   height: 40px;
 }
+
 nav{
-  background-color: $color-main;
   padding: 0;
   height: 50px;
-  position: fixed;
   top: 0;
 }
 
-// .center{
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: flex-end;
-// }
+.fixed-nav{
+  background-color: $color-main;
+  position: fixed;
+}
 
 /*botones con background*/
 .search-bg{
@@ -68,7 +66,7 @@ nav{
 
 .flex{
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
 }
 

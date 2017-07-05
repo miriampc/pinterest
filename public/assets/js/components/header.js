@@ -1,7 +1,9 @@
 // console.log("hola");
 'use strict';
 const Header = (update) => {
-  const nav = $('<nav class="col-xs-12 col-lg-12"></nav>');
+  // const container = $('<div></div>');
+  // nav principal
+  const nav = $('<nav class="fixed-nav col-xs-12 col-lg-12"></nav>');
   const divBrand = $('<div class="navbar-brand col-xs-2 col-md-1 col-lg-1 flex"></div>');
   const brand = $('<a href="index.html"><img class="brand" alt="Logo Pinterest" src="assets/images/pinterest-logo.png"></a>');
 
@@ -15,20 +17,21 @@ const Header = (update) => {
   const btnCategory = $('<div class="box "><button id="category" type="submit" class="bg-btn box__btn"></button></div>');
   const btnNotification = $('<div class="box "><button id="notify" type="submit" class="bg-btn box__btn"></button></div>');
 
+  //nav
   const sectionBoard = $('<div class="flex col-lg-12 col-md-12 col-xs-12"></div>');
   const divIcons = $('<div class="flex col-lg-4"></div>');
   const divEdit = $('<div class="col-lg-2"><img src="assets/images/pencil.png"></div>');
   const divMove = $('<div class="col-lg-2"><img src="assets/images/arrow.png"></div>');
   const divMore = $('<div class="col-lg-2"><img src="assets/images/more.png"></div>');
 
-  const divText = $('<div class= "show col-lg-8"><h1>Web UI</h1></div>')
+  const divText = $('<div class="show col-lg-8"><h1>Web UI</h1></div>')
 
-
+  // $('').append(container);
   $('.components').append(nav);
-  $('.components').append(sectionBoard);
   nav.append(divBrand);
   nav.append(divSearch);
   nav.append(divBtn);
+  nav.append(sectionBoard);
 
   divBrand.append(brand);
   divSearch.append(btnSearch);
@@ -44,5 +47,5 @@ const Header = (update) => {
   divIcons.append(divMove);
   divIcons.append(divMore);
 
-  return sectionBoard;
+  return nav;
 }
