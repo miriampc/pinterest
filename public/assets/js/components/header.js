@@ -15,8 +15,17 @@ const Header = (update) => {
   const btnCategory = $('<div class="box "><button id="category" type="submit" class="bg-btn box__btn"></button></div>');
   const btnNotification = $('<div class="box "><button id="notify" type="submit" class="bg-btn box__btn"></button></div>');
 
+  const sectionBoard = $('<div class="flex col-lg-12 col-md-12 col-xs-12"></div>');
+  const divIcons = $('<div class="flex col-lg-4"></div>');
+  const divEdit = $('<div class="col-lg-2"><img src="assets/images/pencil.png"></div>');
+  const divMove = $('<div class="col-lg-2"><img src="assets/images/arrow.png"></div>');
+  const divMore = $('<div class="col-lg-2"><img src="assets/images/more.png"></div>');
+
+  const divText = $('<div class= "show col-lg-8"><h1>Web UI</h1></div>')
+
 
   $('.components').append(nav);
+  $('.components').append(sectionBoard);
   nav.append(divBrand);
   nav.append(divSearch);
   nav.append(divBtn);
@@ -29,5 +38,11 @@ const Header = (update) => {
   divBtn.append(btnCategory);
   divBtn.append(btnNotification);
 
-  return nav;
+  sectionBoard.append(divIcons);
+  sectionBoard.append(divText);
+  divIcons.append(divEdit);
+  divIcons.append(divMove);
+  divIcons.append(divMore);
+
+  return sectionBoard;
 }

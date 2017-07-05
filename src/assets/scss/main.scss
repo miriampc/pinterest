@@ -3,6 +3,7 @@ $color-main: rgb(255, 255, 255);
 $color-bg2:#efefef;
 
 body{
+  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
   margin: 0px 20px;
   padding: 0;
@@ -20,6 +21,12 @@ nav{
   position: fixed;
   top: 0;
 }
+
+// .center{
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: flex-end;
+// }
 
 /*botones con background*/
 .search-bg{
@@ -53,7 +60,7 @@ nav{
     border: none;
     &--sizew {
       height: 20px;
-      width: 400px;
+      width: 100%;
       background-color: transparent;
     }
   }
@@ -61,7 +68,7 @@ nav{
 
 .flex{
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -72,7 +79,6 @@ nav{
     border:none;
   }
 }
-
 
 /*ocultar elementos*/
 @media (max-width: 767px) {
