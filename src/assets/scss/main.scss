@@ -17,8 +17,12 @@ img{
 
 nav{
   padding: 0;
-  height: 50px;
+  height: 100px;
   top: 0;
+}
+
+.components{
+  height: 3000px;
 }
 
 .fixed-nav{
@@ -78,6 +82,13 @@ nav{
   }
 }
 
+.show{
+    background-color: transparent;
+    widht: 200px;
+    display:none;
+    position: fixed;
+    height: 25px;
+}
 /*ocultar elementos*/
 @media (max-width: 767px) {
   .hidden-xs {

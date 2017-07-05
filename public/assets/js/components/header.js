@@ -47,5 +47,15 @@ const Header = (update) => {
   divIcons.append(divMove);
   divIcons.append(divMore);
 
+  $(window).scroll(function () {
+    var scrollTop = $(this).scrollTop();
+    if (scrollTop > 200) {
+      divText.fadeIn("slow");
+      divIcons.fadeIn("slow");
+    } else {
+      divText.fadeOut("slow");
+      divIcons.fadeIn("slow");
+    }
+  });
   return nav;
 }
