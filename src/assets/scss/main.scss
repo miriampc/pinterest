@@ -1,6 +1,6 @@
 @import "grid";
 $color-main: rgb(255, 255, 255);
-$color-bg2:#efefef;
+$color-bg2: #efefef;
 
 body{
   font-family: 'Roboto', sans-serif;
@@ -84,10 +84,9 @@ nav{
 
 .show{
     background-color: transparent;
-    widht: 200px;
     display:none;
-    position: fixed;
     height: 25px;
+    justify-content: flex-end;
 }
 /*ocultar elementos*/
 @media (max-width: 767px) {

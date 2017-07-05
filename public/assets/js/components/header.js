@@ -20,11 +20,11 @@ const Header = (update) => {
   //nav
   const sectionBoard = $('<div class="flex col-lg-12 col-md-12 col-xs-12"></div>');
   const divIcons = $('<div class="flex col-lg-4"></div>');
-  const divEdit = $('<div class="col-lg-2"><img src="assets/images/pencil.png"></div>');
-  const divMove = $('<div class="col-lg-2"><img src="assets/images/arrow.png"></div>');
-  const divMore = $('<div class="col-lg-2"><img src="assets/images/more.png"></div>');
+  const divEdit = $('<div class="col-lg-2"><a href="#"><img src="assets/images/pencil.png"></a></div>');
+  const divMove = $('<div class="col-lg-2"><a href="#"><img src="assets/images/arrow.png"></a></div>');
+  const divMore = $('<div class="col-lg-2"><a href="#"><img src="assets/images/more.png"></a></div>');
 
-  const divText = $('<div class="show col-lg-8"><h1>Web UI</h1></div>')
+  const divText = $('<div class="show col-lg-7 col-xs-8"><span>Web UI</span></div>')
 
   // $('').append(container);
   $('.components').append(nav);
