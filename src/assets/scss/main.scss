@@ -16,8 +16,8 @@ nav{
   height: 50px;
 }
 
-
-#l{
+/*botones con background*/
+.search-bg{
   background: url("../images/search.png") no-repeat;
   background-size: 40px 40px;
 }
@@ -36,6 +36,7 @@ nav{
   margin: 0;
 }
 
+/*formato de inputs*/
 .search {
   box-sizing: border-box;
   background-color: #efefef;
@@ -59,8 +60,24 @@ nav{
   align-items: center;
 }
 
+.box{
+  box-sizing: border-box;
+  margin: 5px;
+  &__btn{
+    border:none;
+  }
+}
+
+
+/*ocultar elementos*/
 @media (max-width: 767px) {
   .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .hidden-md {
     display: none !important;
   }
 }
