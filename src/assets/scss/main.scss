@@ -1,8 +1,10 @@
 @import "grid";
+$color-main: rgb(255, 255, 255);
+$color-bg2:#efefef;
 
 body{
   box-sizing: border-box;
-  margin: 5px 20px;
+  margin: 0px 20px;
   padding: 0;
   width: 80%;
 }
@@ -12,8 +14,11 @@ img{
   height: 40px;
 }
 nav{
+  background-color: $color-main;
   padding: 0;
   height: 50px;
+  position: fixed;
+  top: 0;
 }
 
 /*botones con background*/
@@ -39,7 +44,7 @@ nav{
 /*formato de inputs*/
 .search {
   box-sizing: border-box;
-  background-color: #efefef;
+  background-color: $color-bg2;
   height: 50px;
   padding: 15px;
   &__input {
