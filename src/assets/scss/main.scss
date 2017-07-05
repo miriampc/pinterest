@@ -31,6 +31,11 @@ nav{
   padding: 10px;
 }
 
+#sectionBoard{
+  box-sizing: border-box;
+  padding: 0 100px;
+}
+
 .fixed-nav{
   background-color: $color-main;
   position: fixed;

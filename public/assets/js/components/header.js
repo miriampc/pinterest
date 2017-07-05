@@ -18,7 +18,7 @@ const Header = (update) => {
   const btnNotification = $('<div class="box "><button id="notify" type="submit" class="bg-btn box__btn"></button></div>');
 
   //nav
-  const sectionBoard = $('<div class="flex col-lg-12 col-md-12 col-xs-12"></div>');
+  const sectionBoard = $('<div id="sectionBoard" class="flex col-lg-12 col-md-12 col-xs-12"></div>');
   const divIcons = $('<div class="flex col-lg-4"></div>');
   const divEdit = $('<div class="col-lg-2"><a href="#"><img src="assets/images/pencil.png"></a></div>');
   const divMove = $('<div class="col-lg-2"><a href="#"><img src="assets/images/arrow.png"></a></div>');
