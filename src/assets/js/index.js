@@ -1,10 +1,8 @@
 "use strict";
 const render = (root)=>{
     root.empty();
-    const section = $('<section class="components">board</section>');
-    console.log(state.pin);
-    board();
-    // section.append(Board());
+    const section = $('<section class="components"></section>');
+    section.append(Board());
 
     root.append(section);
 };

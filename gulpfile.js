@@ -7,7 +7,6 @@ const uglify = require('gulp-uglify');
 const toEs6 = require('gulp-6to5');
 const concat = require('gulp-concat');
 
-
 const config = {
     source:'./src/',
     dist:'./public/'
@@ -44,11 +43,13 @@ gulp.task('sass', () => {
 
 gulp.task('js', () => {
     gulp.src(sources.rootJS)
-      //  .pipe(browserify())
+        // .pipe(browserify())
+        // .pipe(rename('bundle.js'))
         .pipe(toEs6())
         .pipe(concat('bundle.js'))
         .pipe(uglify())
         .pipe(gulp.dest(config.dist + paths.assets +"js"));
+        //.pipe(browserSync.stream());
 });
 
 gulp.task('sass-watch',["sass"], (done) => {

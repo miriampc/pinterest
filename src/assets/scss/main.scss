@@ -1,1 +1,18 @@
 @import "grid";
+%container {
+  padding: 2% 5%;
+}
+%flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board {
+  @extend %container;
+  @extend %flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  &__image img{
+    width: 100%;
+  }
+}
