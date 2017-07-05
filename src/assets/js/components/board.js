@@ -1,17 +1,27 @@
 const Board = () => {
   const boardContainer = $('<section class="board"></section>');
   state.pin.forEach((element) => {
-      const pinImage = $(`<div class="board__image col-sm-6 col-md-4 col-lg-2">
-                            <img src="${element.image.original.url}" alt="Arabela Rojas">
-                          </div>`);
-      boardContainer.append(pinImage);
+    const pinContainer = $('<div class="pin"></div>');
+    const pinImage = $(`<div class="pin__image">
+                          <img src="${element.image.original.url}" alt="Arabela Rojas">
+                        </div>`);
+      const pinAuthor = $(`<div class="pin__author">
+                              <div class="col-md-2"><img src="assets/images/arabelyuska.jpg" alt="Arabela Rojas"></div>
+                              <div class="col-md-8">
+                                <h3>${element.creator.first_name}</h3>
+                                <span>${element.board.name}</span>
+                              </div>
+                           </div>`);
+      pinContainer.append(pinImage);
+      if(element.metadata.article != undefined){
+        const pinTitle = $(`<div class="pin__title"><h2>${element.metadata.article.name}</h2></div>`);
+        const pinSubTitle = $(`<div class="pin__subtitle">${element.metadata.article.description}</div>`);
+        pinContainer.append(pinTitle);
+        pinContainer.append(pinSubTitle);
+      }
+      pinContainer.append(pinAuthor);
+      boardContainer.append(pinContainer);
   })
-  const pintitle = $(`<div class="board__title"></div>`);
-  const pinSubTitle = $(`<div class="board__subtitle"></div>`);
-  const pinAuthor = $(`<div class="board__author">
-                          <img src="assets/images/arabelyuska.jpg" alt="Arabela Rojas">
-                          <h3>aki title</h3>
-                          <span>aki sub</span>
-                       </div>`);
+
   return boardContainer;
 }
