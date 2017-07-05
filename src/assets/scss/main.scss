@@ -2,26 +2,37 @@
 
 body{
   box-sizing: border-box;
-  margin: 0;
+  margin: 5px 20px;
   padding: 0;
+  width: 80%;
 }
 
 img{
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
 }
 nav{
   padding: 0;
-  width: 80%;
   height: 50px;
 }
 
-.bg-btn {
+
+#l{
   background: url("../images/search.png") no-repeat;
-  background-size: 50px 50px;
-  width: 50px;
-  height: 50px;
-  text-align: center;
+  background-size: 40px 40px;
+}
+#save{
+  background: url("../images/icon-profile.png") no-repeat;
+}
+#category{
+  background: url("../images/icon-arrow.png") no-repeat;
+}
+#notify{
+  background: url("../images/message.png") no-repeat;
+}
+.bg-btn {
+  width: 40px;
+  height: 40px;
   margin: 0;
 }
 
@@ -29,15 +40,27 @@ nav{
   box-sizing: border-box;
   background-color: #efefef;
   height: 50px;
-  padding: 20px;
+  padding: 15px;
   &__input {
     outline: none;
     font-size: 1rem;
     border: none;
     &--sizew {
       height: 20px;
-      width: 200px;
+      width: 400px;
       background-color: transparent;
     }
+  }
+}
+
+.flex{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
   }
 }
