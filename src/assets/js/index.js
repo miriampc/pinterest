@@ -3,7 +3,6 @@ const render = (root)=>{
     root.empty();
     const section = $('<section class="components"></section>');
     section.append(Board());
-
     root.append(section);
 };
 const state = {

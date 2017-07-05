@@ -17,17 +17,15 @@ const paths = {
     html:"**/*.html",
     sass:"scss/**/*.scss",
     js:"js/**/*.js",
-    mainSass:"scss/main.scss",
-    mainJS:"js/**/*.js"
+    mainSass:"scss/main.scss"
 };
 
 const sources = {
     assets:config.source + paths.assets,
     html: config.source + paths.html,
-    sass: paths.assets + paths.sass,
-    js : paths.assets + paths.js,
-    rootSass: config.source + paths.assets + paths.mainSass,
-    rootJS:config.source + paths.assets + paths.mainJS
+    sass: config.source + paths.assets + paths.sass,
+    js:config.source + paths.assets + paths.js,
+    rootSass: config.source + paths.assets + paths.mainSass
 };
 
 gulp.task('html', () => {
@@ -42,14 +40,11 @@ gulp.task('sass', () => {
 });
 
 gulp.task('js', () => {
-    gulp.src(sources.rootJS)
-        // .pipe(browserify())
-        // .pipe(rename('bundle.js'))
+     gulp.src(sources.js)
         .pipe(toEs6())
         .pipe(concat('bundle.js'))
         .pipe(uglify())
         .pipe(gulp.dest(config.dist + paths.assets +"js"));
-        // .pipe(browserSync.stream());
 });
 
 gulp.task('sass-watch',["sass"], (done) => {
@@ -66,7 +61,6 @@ gulp.task('html-watch',["html"], (done) => {
     browserSync.reload();
     done();
 });
-
 gulp.task("serve", () => {
    browserSync.init({
        server:{baseDir:config.dist}
