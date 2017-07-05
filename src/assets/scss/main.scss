@@ -1,6 +1,6 @@
 @import "grid";
 %container {
-  padding: 2% 5%;
+  padding: 1% 5%;
 }
 %flex {
   display: flex;
@@ -11,8 +11,12 @@
   @extend %container;
   @extend %flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  &__image img{
-    width: 100%;
+  align-items: flex-start;
+
+  &__image{
+    padding: 1% 2%;
+    img{
+      width: 100%;
+    }
   }
 }
