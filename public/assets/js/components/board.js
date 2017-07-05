@@ -2,7 +2,9 @@ const Board = (update) => {
 
   const boardContainer = $("<section class='board'></section>");
 
-  state.pin.forEach((e){
+  state.pin.forEach((e) =>{
+  	alert();
+  	console.log(e);
     const pinImage = $("<div class='board__image'><img src='"+ e.image.original.url +"'></div>");
     const pinTitle = $("<div class='board__title'><h2>" + e.metadata.article.name +"</h2></div>");
     const pinSubTitle = $("<div class='board__subtitle'><p>"+ e.metadata.article.description +"</p></div>");
