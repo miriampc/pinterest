@@ -49,7 +49,7 @@ gulp.task('js', () => {
         .pipe(concat('bundle.js'))
         .pipe(uglify())
         .pipe(gulp.dest(config.dist + paths.assets +"js"));
-        //.pipe(browserSync.stream());
+        // .pipe(browserSync.stream());
 });
 
 gulp.task('sass-watch',["sass"], (done) => {
