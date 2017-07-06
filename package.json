@@ -24,7 +24,8 @@
   },
   "homepage": "https://github.com/miriampc/pinterest#readme",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "uglify": "^0.1.5"
   },
   "devDependencies": {
     "6to5ify": "^4.1.1",

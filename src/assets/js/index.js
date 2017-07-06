@@ -1,15 +1,20 @@
 "use strict";
 const render = (root)=>{
-    root.empty();
-    const section = $('<section class="components"></section>');
-    section.append(Board());
+    root.empty();    
 
+    const section = $('<section class="components"></section>');
+    
+    if(state.modal == null){       
+        section.append(Board());
+    }   
+    
     root.append(section);
 };
 const state = {
 
     pin : null,
-    modal: null
+    pinSelected : null
+    
 };
 
 $( _ => {
@@ -19,7 +24,7 @@ $( _ => {
           return alert("error");
         }
         state.pin = json.data;
-        const root = $('#root');
+        const root = $('#root');       
         render(root);
     });
 

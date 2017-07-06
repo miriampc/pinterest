@@ -1,4 +1,6 @@
-const Board = () => {
+// const Board = (update) => {
+
+const Board = () => {  
 
   const boardContainer = $('<section class="board"></section>');
   state.pin.forEach((element) => {
@@ -22,6 +24,18 @@ const Board = () => {
       }
       pinContainer.append(pinAuthor);
       boardContainer.append(pinContainer);
+
+      pinContainer.on('click', (e) => {
+        state.pinSelected = element;
+        console.log(state.pinSelected);
+        $('.modal').empty();          
+        $('.modal').append(Modal());
+        $('.modal').css('overflow','scroll'); 
+        $('body').css('overflow','hidden'); 
+        $('.modal').show();
+
+        // update();
+      })
   })
 
   return boardContainer;
