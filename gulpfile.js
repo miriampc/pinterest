@@ -3,6 +3,9 @@ const sass = require('gulp-sass');
 const browserify = require('gulp-browserify');
 const browserSync = require('browser-sync').create();
 const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+const toEs6 = require('gulp-6to5');
+const concat = require('gulp-concat');
 
 const config = {
     source:'./src/',
@@ -13,19 +16,16 @@ const paths = {
     assets:"assets/",
     html:"**/*.html",
     sass:"scss/**/*.scss",
-    mainSass:"scss/main.scss",
-    mainJS:"js/index.js",
-    boardJSC:"js/**/*.js"
+    js:"js/**/*.js",
+    mainSass:"scss/main.scss"
 };
 
 const sources = {
     assets:config.source + paths.assets,
     html: config.source + paths.html,
-    sass: paths.assets + paths.sass,
-    js:config.source + paths.js,
-    rootSass: config.source + paths.assets + paths.mainSass,
-    rootJS:config.source + paths.assets + paths.mainJS,
-    rootJSC:config.source + paths.assets + paths.boardJSC
+    sass: config.source + paths.assets + paths.sass,
+    js:config.source + paths.assets + paths.js,
+    rootSass: config.source + paths.assets + paths.mainSass
 };
 
 gulp.task('html', () => {
@@ -40,17 +40,11 @@ gulp.task('sass', () => {
 });
 
 gulp.task('js', () => {
-    gulp.src(sources.rootJS)
-        .pipe(browserify())
-        .pipe(rename("bundle.js"))
+     gulp.src(sources.js)
+        .pipe(toEs6())
+        .pipe(concat('bundle.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(config.dist + paths.assets +"js"));
-});
-
-gulp.task('components', () => {
-    gulp.src(sources.rootJSC)
-        .pipe(browserify())
-        .pipe(rename("board.js"))
-        .pipe(gulp.dest(config.dist + paths.assets +'js/components'));
 });
 
 gulp.task('sass-watch',["sass"], (done) => {
@@ -59,10 +53,6 @@ gulp.task('sass-watch',["sass"], (done) => {
 });
 
 gulp.task('js-watch',["js"], (done) => {
-    browserSync.reload();
-    done();
-});
-gulp.task('components-watch',["components"], (done) => {
     browserSync.reload();
     done();
 });
@@ -78,5 +68,4 @@ gulp.task("serve", () => {
    gulp.watch(sources.html,["html-watch"]);
    gulp.watch(sources.sass,["sass-watch"]);
    gulp.watch(sources.js,["js-watch"]);
-   gulp.watch(sources.js,["components-watch"]);
 });
