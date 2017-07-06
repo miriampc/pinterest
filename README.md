@@ -1,5 +1,5 @@
 # PINTEREST
-Pinterest es una plataforma para compartir imágenes que permite a los usuarios crear y administrar, en tableros personales temáticos, colecciones de imágenes como eventos, intereses, hobbies y mucho más. Los usuarios pueden buscar otros pinboards, "repinear" imágenes para sus propias colecciones o marcarlas con un 'me gusta'. La misión de Pinterest es "conectar a todos en el mundo, a través de cosas que encuentran interesantes". Fundada por Ben Silbermann, Paul Sciarra, y Evan Sharp, el sitio es manejado por Cold Brew Labs y financiado por un pequeño grupo de empresarios e inversores.
+Pinterest es una plataforma para compartir imágenes que permite a los usuarios crear y administrar, en tableros personales temáticos, colecciones de imágenes como eventos, intereses, hobbies y mucho más. Los usuarios pueden buscar otros pinboards, _"repinear"_ imágenes para sus propias colecciones o marcarlas con un 'me gusta'. La misión de Pinterest es _"conectar a todos en el mundo, a través de cosas que encuentran interesantes"._ Fundada por Ben Silbermann, Paul Sciarra, y Evan Sharp, el sitio es manejado por Cold Brew Labs y financiado por un pequeño grupo de empresarios e inversores.
 
 ![SCREEN Pin](public/assets/images/board-pinterest.png)
 
