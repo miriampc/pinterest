@@ -23,6 +23,14 @@ Pinterest cuenta con un [API](https://developers.pinterest.com/docs/api/overview
 * El proyecto debe estar publicado en [Heroku](https://www.heroku.com/).
 * El proyecto debe denotar el uso de tareas automatizadas en su desarrollo.
 
+------------------------
+> EQUIPO
+
+| [Miriam Peralta ](https://github.com/miriampc) | [Ariana Cabana](https://github.com/arianacabana09) | [Naomi Villanueva](https://github.com/naovillaj) |
+| :------- | :------: | -----: |
+<a href="https://github.com/miriampc"><img src="https://avatars3.githubusercontent.com/u/25912580?v=3&s=460" alt="Miriam Peralta" height="150"></a> | <a href="https://github.com/arianacabana09"><img src="https://avatars1.githubusercontent.com/u/25912546?v=3&s=460" alt="Ariana Cabana" height="150"></a> | <a href="https://github.com/naovillaj"><img src="https://avatars2.githubusercontent.com/u/25906325?v=3&s=460" height="150"></a>
+
+------------------------
 >DEMO
 
 **[PINTEREST]()**
