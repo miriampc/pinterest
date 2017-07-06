@@ -6,7 +6,7 @@ const Modal = () => {
 	$('.modal').append(close);
 
 	if(state.pinSelected.metadata.article != undefined){
-		const modalTitle = $("<div><h2>" + state.pinSelected.metadata.article.name+"</h2></div>");
+		const modalTitle = $("<div><strong>" + state.pinSelected.metadata.article.name+"</strong></div>");
 		modalContainer.append(modalTitle);
 	}
 
@@ -21,19 +21,18 @@ const Modal = () => {
 			divA.append(infoFav);
 		}
 		if(state.pinSelected.metadata.link.site_name != undefined){
-			const infoSiteName = $("<span>Article from <strong> "+ state.pinSelected.metadata.link.site_name +"</strong></span>");
+			const infoSiteName = $("<span>Article from</span><p><strong> "+ state.pinSelected.metadata.link.site_name +"</strong></p>");
 			divA.append(infoSiteName);
 		}
 		const modalButton = $("<button>Read it</button>");
 
 		modalInforA.append(divA);
 		modalInforA.append(modalButton);
-
 		modalContainer.append(modalInforA);
 	}
 
 	if(state.pinSelected.metadata.article != undefined){
-			const modalInfoB = $("<div><p>"+ state.pinSelected.metadata.article.description +"</p><p>Comments</p></div>");
+			const modalInfoB = $("<div><p>"+ state.pinSelected.metadata.article.description +"</p></div>");
 			modalContainer.append(modalInfoB);
 	}
 
@@ -48,8 +47,10 @@ const Modal = () => {
 	}
 
 	const boardAuthor = $("<p> +6.94k boards</p>");
+	const comments = $("<p>Comments</p>");
 	modalAuthor.append(boardAuthor);
 	modalContainer.append(modalAuthor);
+	modalContainer.append(comments);
 	modalBody.append(modalContainer);
 
 	close.on('click', () => {
