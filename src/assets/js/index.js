@@ -4,12 +4,12 @@ const render = (root)=>{
     const section = $('<section class="components"></section>');
     section.append(Header(_ => render(root)));
     section.append(Board());
-
     root.append(section);
 };
 const state = {
     pin : null,
-    header: null
+    header: null,
+    pinSelected : null
 };
 
 $( _ => {
@@ -22,4 +22,5 @@ $( _ => {
         const root = $('#root');
         render(root);
     });
+
 })

@@ -1,11 +1,21 @@
 const Board = () => {
-  const boardContainer = $('<section class="board"></section>');
+  const mainContainer = $('<section class="main-container"></section>');
+  const dataUser = $(`<div class="main-container__user col-xs-12">
+                        <h1>${state.pin[0].board.name}</h1>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                          <p>30 pines</p>
+                          <p>83 seguidores</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6"><img src="assets/images/arabelyuska.jpg" alt="Arabela Rojas"></div>
+                    </div>`);
+  mainContainer.append(dataUser);
+  const boardContainer = $('<div class="board"></div>');
   const addPin = $(`<div class="pin__newPin">
                         <div><a href="" class="fa fa-plus"></a></div>
                         <h2>Guardar Pin</h2>
                     </div>`);
 
-  boardContainer.append(addPin);                  
+  boardContainer.append(addPin);
   state.pin.forEach((element) => {
     const pinContainer = $('<div class="pin"></div>');
     const pinImage = $(`<div class="pin__image">
@@ -27,7 +37,17 @@ const Board = () => {
       }
       pinContainer.append(pinAuthor);
       boardContainer.append(pinContainer);
-  })
 
-  return boardContainer;
+      pinContainer.on('click', (e) => {
+        state.pinSelected = element;
+        console.log(state.pinSelected);
+        $('.modal').empty();
+        $('.modal').append(Modal());
+        $('.modal').css('overflow','scroll');
+        $('body').css('overflow','hidden');
+        $('.modal').show();
+      })
+  })
+  mainContainer.append(boardContainer);
+  return mainContainer;
 }
