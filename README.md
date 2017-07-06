@@ -33,4 +33,4 @@ Pinterest cuenta con un [API](https://developers.pinterest.com/docs/api/overview
 ------------------------
 >DEMO
 
-**[PINTEREST]()**
+**[PINTEREST](https://replica-pinterest.herokuapp.com/)**
