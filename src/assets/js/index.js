@@ -2,11 +2,14 @@
 const render = (root)=>{
     root.empty();
     const section = $('<section class="components"></section>');
+    section.append(Header(_ => render(root)));
     section.append(Board());
+
     root.append(section);
 };
 const state = {
-    pin : null
+    pin : null,
+    header: null
 };
 
 $( _ => {
