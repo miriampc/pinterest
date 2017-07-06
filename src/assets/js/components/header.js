@@ -1,4 +1,3 @@
- // console.log("hola");
 'use strict';
 const Header = (update) => {
   // nav principal

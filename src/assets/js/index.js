@@ -2,7 +2,7 @@
 const render = (root)=>{
     root.empty();
     const section = $('<section class="components"></section>');
-    section.append(Header(_ => render(root)));
+    section.append(Header());
     section.append(Board());
     root.append(section);
 };

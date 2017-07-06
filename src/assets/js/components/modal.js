@@ -1,6 +1,4 @@
 const Modal = () => {
-	console.log(state.pinSelected);
-
 	const modalBody = $("<div class='containerModal'></div>");
 	const modalContainer = $("<div class='modalBody'></div>");
 	const close = $("<span class='modal__close'><i class='fa fa-times'></i></span>");

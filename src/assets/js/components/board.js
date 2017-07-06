@@ -44,7 +44,6 @@ const Board = () => {
 
       pinContainer.on('click', (e) => {
         state.pinSelected = element;
-        console.log(state.pinSelected);
         $('.modal').empty();
         $('.modal').append(Modal());
         $('.modal').css('overflow','scroll');
