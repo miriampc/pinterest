@@ -5,6 +5,9 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+a {
+  text-decoration: none;
+}
 %container {
   padding: 1% 3%;
 }
@@ -19,24 +22,50 @@
   -webkit-columns: 5 14em;
   columns: 5 14em;
 }
+
 .pin {
-    width: 250px;
-    margin:14% 1.5%;
-    border-radius: 5px;
-  &__image{
-    border-radius: 5px;
-    margin-bottom: 10px;
-    img{
-      width: 100%;
-      border-radius: 5px;
+    width: 14em;
+    margin:0 1% 14% 1%;
+    padding: 2% 4%;
+    border-radius: 10px;
+    &__newPin {
+      div {
+        @extend %flex;
+        border-radius: 10px;
+        background-color: #efefef;
+        height: 14em;
+        width: 14em;
+        a {
+          color: #fff;
+          font-size: 1.7rem;
+          padding: 10px 12px;
+          background-color: #b2081a;
+          border-radius: 50%;
+        }
+      }
+      h2 {
+        color: #b5b5b5;
+      }
     }
-  }
-  &__author {
-    @extend %flex;
-    justify-content: space-around;
-    img {
-      width: 90%;
-      border-radius: 50%;
+    &__image{
+      border-radius: 10px;
+      margin-bottom: 10px;
+      img{
+        width: 100%;
+        border-radius: 10px;
+      }
     }
-  }
+    &__author {
+      @extend %flex;
+      justify-content: space-around;
+      img {
+        width: 90%;
+        border-radius: 50%;
+      }
+    }
+    &:hover {
+      background-color: #efefef;
+      cursor: url("https://cdn1.iconfinder.com/data/icons/hawcons/32/698957-icon-112-search-plus-128.png"), auto;
+      //cursor: url('../images/search-icon.png'), auto;
+    }
 }
