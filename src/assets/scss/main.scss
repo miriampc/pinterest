@@ -248,9 +248,21 @@
 
   /*media*/
   @media (max-width: 767px) {
+    // Header
     .hidden-xs {
       display: none !important;
     }
+    // board
+    .board {
+      text-align: -webkit-center;
+      .pin {
+        width: 90%;
+        &__newPin div{
+          width: 90%;
+        }
+      }
+    }
+    // Modal
     .modalBody{
       width: 95%;
       &__inforA{
