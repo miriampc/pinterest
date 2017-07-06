@@ -24,7 +24,7 @@ const Header = (update) => {
   const divMove = $('<div class="col-lg-2"><a href="#"><img src="assets/images/arrow.png"></a></div>');
   const divMore = $('<div class="col-lg-2"><a href="#"><img src="assets/images/more.png"></a></div>');
 
-  const divText = $('<div class="show col-lg-7 col-xs-8"><span>Web UI</span></div>')
+  const divText = $('<div class="show col-lg-7 col-xs-8"><h1>Web UI</h1></div>')
 
   $('.components').append(header);
   header.append(container);

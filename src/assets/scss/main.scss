@@ -43,7 +43,6 @@ $color-bg2: #efefef;
   &__boardTitle {
     @extend %flex;
     padding: 0 100px;
-
     .icons-container {
       @extend %flex;
     }
@@ -96,10 +95,6 @@ $color-bg2: #efefef;
         }
       }
   }
-
-// .components{
-//   height: 3000px;
-// }
 
 /*botones con background*/
 #save{
