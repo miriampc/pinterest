@@ -1,6 +1,6 @@
 const Board = () => {
   const mainContainer = $('<section class="main-container"></section>');
-  const dataUser = $(`<div class="main-container__user col-xs-12">
+  const dataUser = $(`<div class="main-container__user col-xs-6">
                         <h1>${state.pin[0].board.name}</h1>
                         <div class="col-xs-6 col-sm-6 col-md-6">
                           <p>30 pines</p>
@@ -18,6 +18,10 @@ const Board = () => {
   boardContainer.append(addPin);
   state.pin.forEach((element) => {
     const pinContainer = $('<div class="pin"></div>');
+    const iconUpload = $('<a class="pin__upload" href="#"><i class="fa fa-upload"></i></a>');
+    const iconPin = $('<a class="pin__pinear" href="#"><i class="fa fa-thumb-tack"></i> Guardar</a>');
+    pinContainer.append(iconUpload);
+    pinContainer.append(iconPin);
     const pinImage = $(`<div class="pin__image">
                           <img src="${element.image.original.url}" alt="Arabela Rojas">
                         </div>`);
@@ -46,6 +50,14 @@ const Board = () => {
         $('.modal').css('overflow','scroll');
         $('body').css('overflow','hidden');
         $('.modal').show();
+      })
+      pinContainer.mouseover(() => {
+        iconUpload.show();
+        iconPin.show();
+      })
+      pinContainer.mouseout(() => {
+        iconUpload.hide();
+        iconPin.hide();
       })
   })
   mainContainer.append(boardContainer);

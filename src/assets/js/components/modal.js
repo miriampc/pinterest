@@ -23,7 +23,7 @@ const Modal = () => {
 			divA.append(infoFav);
 		}
 		if(state.pinSelected.metadata.link.site_name != undefined){
-			const infoSiteName = $("<span>Article from<strong> "+ state.pinSelected.metadata.link.site_name +"</strong></span>");
+			const infoSiteName = $("<span>Article from <strong> "+ state.pinSelected.metadata.link.site_name +"</strong></span>");
 			divA.append(infoSiteName);
 		}
 		const modalButton = $("<button>Read it</button>");
@@ -49,7 +49,7 @@ const Modal = () => {
       modalAuthor.append(descriptionAuthor);
 	}
 
-	const boardAuthor = $("<p>+6.94k boards</p>");
+	const boardAuthor = $("<p> +6.94k boards</p>");
 	modalAuthor.append(boardAuthor);
 	modalContainer.append(modalAuthor);
 	modalBody.append(modalContainer);
